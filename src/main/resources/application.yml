@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    ds1:
+      jdbc_url: jdbc:mysql://127.0.0.1:3306/test01
+      username: root
+      password: root
+    ds2:
+      jdbc_url: jdbc:mysql://127.0.0.1:3306/test02
+      username: root
+      password: root
+server:
+  port: 8090
