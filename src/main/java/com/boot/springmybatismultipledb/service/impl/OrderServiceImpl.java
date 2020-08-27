@@ -6,7 +6,6 @@ import com.boot.springmybatismultipledb.mapper.StorageMapper;
 import com.boot.springmybatismultipledb.service.OrderService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -25,11 +24,11 @@ public class OrderServiceImpl implements OrderService {
     Logger logger = LoggerFactory.getLogger(this.getClass());
 
 
-    @Transactional
+//    @Transactional
     @Override
     public void createOrder(Order order) {
         storageMapper.decreaseStorage(order);
-        int k = 1/0;
+//        int k = 1/0;
         logger.info("库存已扣减，商品代码:{}，购买数量:{}。创建订单中...",order.getCommodityCode(),order.getCount());
         orderMapper.createOrder(order);
     }

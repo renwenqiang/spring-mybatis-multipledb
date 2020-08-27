@@ -1,12 +1,14 @@
 spring:
   datasource:
     ds1:
-      jdbc_url: jdbc:mysql://127.0.0.1:3306/test01
+      jdbc_url: jdbc:mysql://127.0.0.1:3306/test01?serverTimezone=UTC
       username: root
       password: root
+      driver-class-name: com.mysql.cj.jdbc.Driver
     ds2:
-      jdbc_url: jdbc:mysql://127.0.0.1:3306/test02
+      jdbc_url: jdbc:mysql://127.0.0.1:3306/test02?serverTimezone=UTC
       username: root
       password: root
+      driver-class-name: com.mysql.cj.jdbc.Driver
 server:
   port: 8090

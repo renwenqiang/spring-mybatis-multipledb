@@ -3,15 +3,16 @@ package com.boot.springmybatismultipledb.controller;
 import cn.hutool.core.lang.Snowflake;
 import com.boot.springmybatismultipledb.entity.Order;
 import com.boot.springmybatismultipledb.service.OrderService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.annotation.Resource;
+
 @RestController
 public class OrderController {
 
-    @Autowired
+    @Resource
     OrderService orderService;
 
     Snowflake snowflake = new Snowflake(1,1);

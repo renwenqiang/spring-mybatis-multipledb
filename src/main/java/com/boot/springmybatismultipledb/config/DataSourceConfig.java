@@ -1,5 +1,6 @@
 package com.boot.springmybatismultipledb.config;
 
+import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -15,6 +16,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Configuration
+@Slf4j
 public class DataSourceConfig {
 
     /**
@@ -26,12 +28,14 @@ public class DataSourceConfig {
     @Bean(name = "ds1")
     @ConfigurationProperties(prefix = "spring.datasource.ds1")
     public DataSource getDateSource1() {
+        log.info("ds1-----------------");
         return DataSourceBuilder.create().build();
     }
 
     @Bean(name = "ds2")
     @ConfigurationProperties(prefix = "spring.datasource.ds2")
     public DataSource getDateSource2() {
+        log.info("ds2-----------------");
         return DataSourceBuilder.create().build();
     }
 
