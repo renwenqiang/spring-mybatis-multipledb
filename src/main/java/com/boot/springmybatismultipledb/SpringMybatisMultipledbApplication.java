@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
 @SpringBootApplication
-@MapperScan("com.boot.springmybatismultipledb.mapper")
+//@MapperScan("com.boot.springmybatismultipledb.mapper")
 public class SpringMybatisMultipledbApplication {
 
     public static void main(String[] args) {

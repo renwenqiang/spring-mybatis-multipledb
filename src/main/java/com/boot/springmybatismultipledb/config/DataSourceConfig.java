@@ -89,12 +89,12 @@ public class DataSourceConfig {
     }
 
     @Bean(name = "sqlSessionTemplate")
-    public CustomSqlSessionTemplate sqlSessionTemplate(@Qualifier("sqlSessionFactory1")SqlSessionFactory factory1,@Qualifier("sqlSessionFactory2")SqlSessionFactory factory2) throws Exception {
+    public MySqlSessionTemplate sqlSessionTemplate(@Qualifier("sqlSessionFactory1")SqlSessionFactory factory1,@Qualifier("sqlSessionFactory2")SqlSessionFactory factory2) throws Exception {
         Map<Object,SqlSessionFactory> sqlSessionFactoryMap = new HashMap<>();
         sqlSessionFactoryMap.put("ds1",factory1);
         sqlSessionFactoryMap.put("ds2",factory2);
 
-        CustomSqlSessionTemplate customSqlSessionTemplate = new CustomSqlSessionTemplate(factory1);
+        MySqlSessionTemplate customSqlSessionTemplate = new MySqlSessionTemplate(factory1);
         customSqlSessionTemplate.setTargetSqlSessionFactorys(sqlSessionFactoryMap);
         customSqlSessionTemplate.setDefaultTargetSqlSessionFactory(factory1);
         return customSqlSessionTemplate;
